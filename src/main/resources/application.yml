@@ -2,3 +2,18 @@
 server:
   port: 10001
 
+spring:
+  # 数据源配置项
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    name: aurora
+    url: jdbc:mysql://${MYSQL_MASTER_URI:49.235.143.119:3306}/${spring.datasource.name}?allowMultiQueries=true&useUnicode=true&useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true&nullCatalogMeansCurrent=true # MySQL Connector/J 8.X 连接的示例
+    username: root
+    password: 1q2i3u4o
+    druid: # Druid 【监控】相关的全局配置
+      web-stat-filter: #监控Web
+        enabled: true
+        stat-view-servlet: #后台页面 http://localhost:8080/druid/login.html
+          enabled: true
+          login-username: root # 用户名
+          login-password: AURORA # 密码

@@ -1,0 +1,45 @@
+#!/bin/bash
+
+basePath="/mnt/d/c_code/IoT2.2/tyst-cloud/"
+
+# sso-service
+sso=${basePath}"tyst-module-sso/tyst-module-sso-biz/target"
+# gateway-service
+gateway=${basePath}"tyst-gateway/target"
+# access-service
+access=${basePath}"tyst-module-access/tyst-module-access-biz/target"
+# biz-service 基础业务模块
+biz=${basePath}"tyst-module-biz/tyst-module-biz-biz/target"
+# data-service  数据中心模块
+data=${basePath}"tyst-module-data/tyst-module-data-biz/target"
+# infra-service 基础实施模块
+infra=${basePath}"tyst-module-infra/tyst-module-infra-biz/target"
+# report-service 报表大屏模块
+report=${basePath}"tyst-module-report/tyst-module-report-biz/target"
+# system-service 系统配置模块
+system=${basePath}"tyst-module-system/tyst-module-system-biz/target"
+# vision-service 视频模块
+vision=${basePath}"tyst-module-vision/tyst-module-vision-biz/target"
+# msg-service
+msg=${basePath}"tyst-module-msg/tyst-module-msg-biz/target"
+
+cd ${sso}
+go build xjar.go
+cd ${gateway}
+go build xjar.go
+cd ${access}
+go build xjar.go
+cd ${biz}
+go build xjar.go
+cd ${data}
+go build xjar.go
+cd ${infra}
+go build xjar.go
+cd ${report}
+go build xjar.go
+cd ${system}
+go build xjar.go
+cd ${vision}
+go build xjar.go
+cd ${msg}
+go build xjar.go
